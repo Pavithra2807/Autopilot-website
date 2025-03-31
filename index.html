@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autopilot - Next-Gen Autonomous Rides</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Autopilot</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Book a Ride</a>
-            <a href="fleet.html">Fleet</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <h2>Experience the Future of Mobility</h2>
-        <p>Safe, autonomous, and reliable rides at your fingertips.</p>
-        <a href="booking.html" class="btn">Book a Ride</a>
-    </section>
-</body>
-</html>
+<h2>Service Areas</h2>
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<!-- Add Leaflet.js -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+  var map = L.map('map').setView([28.6139, 77.2090], 12); // Default: New Delhi
+
+  // Add OpenStreetMap Layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add a Marker
+  L.marker([28.6139, 77.2090]).addTo(map)
+    .bindPopup("Our Service Area")
+    .openPopup();
+</script>
